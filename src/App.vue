@@ -10,7 +10,6 @@
       </nav>
     </header>
     <main>
-      <HomePage/>
       <RobotBuilder/>
     </main>
   </div>
