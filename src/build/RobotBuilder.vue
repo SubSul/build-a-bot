@@ -2,31 +2,31 @@
   <div>
     <div class="top-row">
       <div class="top part">
-        <img src="../data/images/head-big-eye.png" title="head"/>
-        <button class="prev-selector">&#9668;</button>
-        <button class="next-selector">&#9658;</button>
+        <img v-bind:src="availableParts.heads[selectedHeadIndex].src" title="head"/>
+        <button v-on:click="selectPreviousHead()" class="prev-selector">&#9668;</button>
+        <button v-on:click="selectNextHead()" class="next-selector">&#9658;</button>
       </div>
     </div>
     <div class="middle-row">
       <div class="left part">
-        <img src="../data/images/arm-articulated-claw.png" title="left arm"/>
+        <img v-bind:src="availableParts.arms[0].src" title="left arm"/>
         <button class="prev-selector">&#9650;</button>
         <button class="next-selector">&#9660;</button>
       </div>
       <div class="center part">
-        <img src="../data/images/torso-flexible-gauged.png" title="left arm"/>
+        <img v-bind:src="availableParts.torsos[0].src" title="left arm"/>
         <button class="prev-selector">&#9668;</button>
         <button class="next-selector">&#9658;</button>
       </div>
       <div class="right part">
-        <img src="../data/images/arm-dual-claw.png" title="left arm"/>
+        <img v-bind:src="availableParts.arms[0].src" title="left arm"/>
         <button class="prev-selector">&#9650;</button>
         <button class="next-selector">&#9660;</button>
       </div>
     </div>
     <div class="bottom-row">
       <div class="bottom part">
-        <img src="../data/images/base-single-wheel.png" title="left arm"/>
+        <img v-bind:src="availableParts.bases[0].src" title="left arm"/>
         <button class="prev-selector">&#9668;</button>
         <button class="next-selector">&#9658;</button>
       </div>
@@ -36,13 +36,35 @@
 
 <script>
   import availableParts from '../data/parts'
+
+  function getNextValidIndex(index, length) {
+    const incrementedIndex = index + 1
+    return incrementedIndex > length - 1 ? 0 : incrementedIndex
+
+  }
+
+  function getPreviousValidIndex(index, length) {
+    const deprecatedIndex = index - 1
+    return deprecatedIndex < 0 ? length - 1 : deprecatedIndex
+
+  }
+
   export default {
     name: "RobotBuilder",
     data() {
       return {
         availableParts,
+        selectedHeadIndex: 0,
       };
     },
+    methods: {
+      selectNextHead() {
+        this.selectedHeadIndex = getNextValidIndex(this.selectedHeadIndex, availableParts.heads.length)
+      },
+      selectPreviousHead() {
+        this.selectedHeadIndex = getPreviousValidIndex(this.selectedHeadIndex, availableParts.heads.length)
+      }
+    }
   }
 </script>
 
