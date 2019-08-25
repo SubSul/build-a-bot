@@ -80,6 +80,9 @@
 
   export default {
     name: "RobotBuilder",
+    created() {
+      console.log('RobotBuilder component created')
+    },
     data() {
       return {
         availableParts,
