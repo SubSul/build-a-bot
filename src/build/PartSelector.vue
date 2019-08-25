@@ -32,6 +32,12 @@
         }
       }
     },
+    created() {
+      this.emitSelectedPart();
+    },
+    updated() {
+      this.emitSelectedPart();
+    },
     data() {
       return {selectedPartIndex: 0};
     },
@@ -41,6 +47,9 @@
       },
     },
     methods: {
+      emitSelectedPart() {
+        this.$emit('partSelected', this.selectedPart)
+      },
       selectNextPart() {
         this.selectedPartIndex = getNextValidIndex(
           this.selectedPartIndex,
