@@ -2,7 +2,15 @@
   <div>
     <div class="top-row">
       <div class="top part">
-        <div class="robot-name">{{selectedRobot.head.title}}</div>
+        <div class="robot-name">
+          {{selectedRobot.head.title}}
+          <!--v-if toggles by removing/adding element. Recommended for less costly rendering-->
+          <span v-if="selectedRobot.head.onSale" class="sale">Sale!</span>
+          <!--
+          v-show toggles based on display style property. Recommended for costly rendering.
+          <span v-show="selectedRobot.head.onSale" class="sale">Sale!</span>
+          -->
+        </div>
         <img :src="selectedRobot.head.src" title="head"/>
         <button @click="selectPreviousPart('head')" class="prev-selector">&#9668;</button>
         <button @click="selectNextPart('head')" class="next-selector">&#9658;</button>
@@ -229,5 +237,9 @@
     top: -25px;
     text-align: center;
     width: 100%
+  }
+
+  .sale {
+    color: red;
   }
 </style>
