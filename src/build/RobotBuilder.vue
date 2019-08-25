@@ -4,7 +4,7 @@
       Add to Cart
     </button>
     <div class="top-row">
-      <div class="top part" :style="headBorderStyle">
+      <div :class="[saleBorderClass, 'top', 'part']">
         <div class="robot-name">
           {{selectedRobot.head.title}}
           <!--v-if toggles by removing/adding element. Recommended for less costly rendering-->
@@ -92,10 +92,8 @@
       };
     },
     computed: {
-      headBorderStyle() {
-        return {
-          border: this.selectedRobot.head.onSale ? '3px solid red' : '3px solid grey'
-        }
+      saleBorderClass() {
+        return this.selectedRobot.head.onSale ? 'sale-border' : ''
       },
       selectedRobot() {
         return {
@@ -294,5 +292,9 @@
 
   .cost {
     text-align: right;
+  }
+
+  .sale-border {
+    border: 3px solid red
   }
 </style>
