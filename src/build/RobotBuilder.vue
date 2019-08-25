@@ -4,21 +4,21 @@
       Add to Cart
     </button>
     <div class="top-row">
-      <div :class="[saleBorderClass, 'top', 'part']">
+      <div :class="[saleBorderClass]">
         <!--<div class="robot-name">
           {{selectedRobot.head.title}}
           <span v-if="selectedRobot.head.onSale" class="sale">Sale!</span>
         </div>-->
-        <PartSelector/>
+        <PartSelector :parts="availableParts.heads" position="top"/>
       </div>
     </div>
     <div class="middle-row">
-      <PartSelector/>
-      <PartSelector/>
-      <PartSelector/>
+      <PartSelector :parts="availableParts.arms" position="left"/>
+      <PartSelector :parts="availableParts.torsos" position="center"/>
+      <PartSelector :parts="availableParts.arms" position="right"/>
     </div>
     <div class="bottom-row">
-      <PartSelector/>
+      <PartSelector :parts="availableParts.bases" position="bottom"/>
     </div>
     <div>
       <h1>Cart</h1>
