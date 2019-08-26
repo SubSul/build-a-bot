@@ -10,21 +10,14 @@
       </nav>
     </header>
     <main>
-      <RobotBuilder/>
+      <router-view/>
     </main>
   </div>
 </template>
 
 <script>
-  import HomePage from './home/HomePage';
-  import RobotBuilder from './build/RobotBuilder'
-
   export default {
     name: 'app',
-    components: {
-      RobotBuilder,
-      HomePage,
-    },
   };
 </script>
 
