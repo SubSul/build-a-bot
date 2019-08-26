@@ -1,15 +1,15 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HomePage from '../home/HomePage';
-import RobotBuilder from '../build/RobotBuilder';
-import PartInfo from '../parts/PartInfo';
-import BrowseParts from '../parts/BrowseParts';
-import RobotHeads from '../parts/RobotHeads';
-import RobotArms from '../parts/RobotArms';
-import RobotBases from '../parts/RobotBases';
-import RobotTorsos from '../parts/RobotTorsos';
-import SidebarStandard from '../sidebars/SidebarStandard';
-import SidebarBuild from '../sidebars/SidebarBuild';
+import HomePage from '../home/HomePage.vue';
+import RobotBuilder from '../build/RobotBuilder.vue';
+import PartInfo from '../parts/PartInfo.vue';
+import BrowseParts from '../parts/BrowseParts.vue';
+import RobotHeads from '../parts/RobotHeads.vue';
+import RobotArms from '../parts/RobotArms.vue';
+import RobotBases from '../parts/RobotBases.vue';
+import RobotTorsos from '../parts/RobotTorsos.vue';
+import SidebarStandard from '../sidebars/SidebarStandard.vue';
+import SidebarBuild from '../sidebars/SidebarBuild.vue';
 
 Vue.use(Router);
 
