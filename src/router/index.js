@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import Router from 'vue-router'
+import Router from 'vue-router';
 import HomePage from '../home/HomePage';
 import RobotBuilder from '../build/RobotBuilder';
 import PartInfo from '../parts/PartInfo';
@@ -20,15 +20,15 @@ export default new Router({
     name: 'Home',
     components: {
       default: HomePage,
-      sidebar: SidebarStandard
+      sidebar: SidebarStandard,
     },
   }, {
     path: '/build',
     name: 'Build',
     components: {
       default: RobotBuilder,
-      sidebar: SidebarBuild
-    }
+      sidebar: SidebarBuild,
+    },
   }, {
     path: '/parts/browse',
     name: 'BrowseParts',
@@ -50,15 +50,15 @@ export default new Router({
         name: 'BrowseTorsos',
         path: 'torsos',
         component: RobotTorsos,
-      }]
+      }],
   }, {
     path: '/parts/:partType/:id',
     name: 'Parts',
     component: PartInfo,
     props: true,
     beforeEnter(to, from, next) {
-      const isValidId = Number.isInteger(Number(to.params.id))
-      next(isValidId)
-    }
+      const isValidId = Number.isInteger(Number(to.params.id));
+      next(isValidId);
+    },
   }],
-})
+});
