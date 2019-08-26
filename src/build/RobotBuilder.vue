@@ -1,8 +1,8 @@
 <template>
   <div class="content">
     <div class="preview">
-      <div class="preview-content">
-        <CollapsibleSection>
+      <CollapsibleSection>
+        <div class="preview-content">
           <div class="top-row">
             <img :src="selectedRobot.head.src"/>
           </div>
@@ -11,11 +11,11 @@
             <img :src="selectedRobot.torso.src"/>
             <img :src="selectedRobot.rightArm.src" class="rotate-right"/>
           </div>
-        </CollapsibleSection>
-        <div class="bottom-row">
-          <img :src="selectedRobot.bottom.src"/>
+          <div class="bottom-row">
+            <img :src="selectedRobot.bottom.src"/>
+          </div>
         </div>
-      </div>
+      </CollapsibleSection>
       <button class="add-to-cart" @click="addToCart()">
         Add to Cart
       </button>
