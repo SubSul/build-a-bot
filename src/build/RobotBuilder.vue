@@ -86,15 +86,14 @@
         return this.selectedRobot.head.onSale ? 'sale-border' : ''
       },
       availableParts() {
-        return this.$store.state.parts;
+        return this.$store.state.robots.parts;
       }
     },
     methods: {
       addToCart() {
         const robot = this.selectedRobot;
         const cost = robot.head.cost + robot.leftArm.cost + robot.rightArm.cost + robot.torso.cost + robot.bottom.cost;
-        this.$store.dispatch('addRobotToCart', Object.assign({}, robot, {cost}))
-          .then(() => this.$router.push('/cart'))
+        this.$store.commit('addRobotToCart', Object.assign({}, robot, {cost}))
         this.addedToCard = true;
       }
     }
