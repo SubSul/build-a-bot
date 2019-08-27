@@ -38,7 +38,7 @@
       <tbody>
       <tr v-for="(robot, index) in cartSaleItems" :key="index">
         <td class="robot-title">
-          {{robot.heads.title}}
+          {{robot.head.title}}
         </td>
         <td class="cost">
           {{robot.cost}}
