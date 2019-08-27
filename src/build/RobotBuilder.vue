@@ -53,7 +53,7 @@
   export default {
     name: "RobotBuilder",
     created() {
-      this.$store.dispatch('getParts')
+      this.$store.dispatch('robots/getParts')
     },
     beforeRouteLeave(to, from, next) {
       if (this.addedToCard) {
@@ -93,7 +93,7 @@
       addToCart() {
         const robot = this.selectedRobot;
         const cost = robot.head.cost + robot.leftArm.cost + robot.rightArm.cost + robot.torso.cost + robot.bottom.cost;
-        this.$store.commit('addRobotToCart', Object.assign({}, robot, {cost}))
+        this.$store.commit('robots/addRobotToCart', Object.assign({}, robot, {cost}))
         this.addedToCard = true;
       }
     }
