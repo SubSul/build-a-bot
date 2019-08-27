@@ -46,13 +46,15 @@
 </template>
 
 <script>
-  import availableParts from '../data/parts'
   import createdHookMixin from './created-hook-mixin'
   import PartSelector from './PartSelector'
   import CollapsibleSection from '../shared/CollapsibleSection'
 
   export default {
     name: "RobotBuilder",
+    created() {
+      this.$store.dispatch('getParts')
+    },
     beforeRouteLeave(to, from, next) {
       if (this.addedToCard) {
         next(true);
@@ -68,7 +70,6 @@
     mixins: [createdHookMixin],
     data() {
       return {
-        availableParts,
         addedToCard: false,
         cart: [],
         selectedRobot: {
@@ -83,6 +84,9 @@
     computed: {
       saleBorderClass() {
         return this.selectedRobot.head.onSale ? 'sale-border' : ''
+      },
+      availableParts() {
+        return this.$store.state.parts;
       }
     },
     methods: {
