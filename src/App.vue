@@ -61,7 +61,6 @@
   }
 
   main {
-    padding: 20px;
     background-color: white;
     width: 100%;
     min-height: 300px;
@@ -109,6 +108,7 @@
     display: flex;
     margin: 10px auto 0 auto;
     justify-content: center;
+    padding: 10px;
   }
 
   .aside {
