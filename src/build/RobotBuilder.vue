@@ -106,7 +106,7 @@
       addToCart() {
         const robot = this.selectedRobot;
         const cost = robot.head.cost + robot.leftArm.cost + robot.rightArm.cost + robot.torso.cost + robot.bottom.cost;
-        this.cart.push(Object.assign({}, robot, {cost}))
+        this.$store.commit('addRobotToCart', Object.assign({}, robot, {cost}))
         this.addedToCard = true;
       }
     }
